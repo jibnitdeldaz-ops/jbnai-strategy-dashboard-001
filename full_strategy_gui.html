@@ -1,0 +1,191 @@
+
+    <html>
+    <head>
+        <title>RSI(2) Mean Reversion Dashboard</title>
+        <style>
+            body { background: #131722; color: white; font-family: sans-serif; padding: 20px; }
+            .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 15px; }
+            .card { background: #1e222d; border-radius: 10px; padding: 10px; border: 1px solid #363c4e; }
+            .header { background: #2962ff; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>🚀 Strategy Dashboard: RSI(2) + 90MA</h1>
+            <p><strong>AI Intel:</strong> As of January 31, 2026, here's a brief overview of Nifty 50 and Bitcoin in relation to their moving averages:
+
+*   **Nifty 50:** Nifty 50's current price is approximately 25,012.95. According to Investing.com, Nifty 50 is showing "buy" signals for MA5, MA10, and MA20, but "sell" signals for MA100 and MA200.
+*   **Bitcoin:** Bitcoin is trading around $78,611.48. Bitcoin's moving averages are as follows: the 5-Day moving average is 86,991.02, the 20-Day moving average is 90,980.94, the 50-Day moving average is 89,897.40, the 100-Day moving average is 99,586.55, and the 200-Day moving average is 104,661.82.
+
+Based on the information, it's difficult to definitively say whether Nifty 50 or Bitcoin are in a "Dead Rubber" or "Overheated" zone. However, some sources suggest that Bitcoin may be approaching an "overheated zone".
+
+It is important to note that this information is for informational purposes only and should not be considered financial advice.
+</p>
+        </div>
+        <div class="grid">
+    
+        <div class="card">
+            <h3 style="margin:5px;">Bitcoin</h3>
+            <div id="tv_Bitcoin" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "BINANCE:BTCUSDT",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_Bitcoin"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Gold BeES</h3>
+            <div id="tv_GoldBeES" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:GOLDBEES",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_GoldBeES"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Silver BeES</h3>
+            <div id="tv_SilverBeES" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:SILVERBEES",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_SilverBeES"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Nifty 50</h3>
+            <div id="tv_Nifty50" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:NIFTY",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_Nifty50"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Sensex</h3>
+            <div id="tv_Sensex" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "BSE:SENSEX",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_Sensex"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Smallcap 250</h3>
+            <div id="tv_Smallcap250" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:HDFCSML250",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_Smallcap250"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">Junior BeES</h3>
+            <div id="tv_JuniorBeES" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:JUNIORBEES",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_JuniorBeES"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">MON100</h3>
+            <div id="tv_MON100" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:MON100",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_MON100"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">MAFANG</h3>
+            <div id="tv_MAFANG" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:MAFANG",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_MAFANG"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">HangSeng BeES</h3>
+            <div id="tv_HangSengBeES" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:HNGSNGBEES",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_HangSengBeES"
+            });
+            </script>
+        </div>
+        
+        <div class="card">
+            <h3 style="margin:5px;">MAHKTECH</h3>
+            <div id="tv_MAHKTECH" style="height:350px;"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+            new TradingView.widget({
+              "width": "100%", "height": 350, "symbol": "NSE:MAHKTECH",
+              "interval": "W", "timezone": "Asia/Kolkata", "theme": "dark",
+              "style": "1", "locale": "en", "enable_publishing": false,
+              "hide_top_toolbar": true, "hide_legend": true,
+              "container_id": "tv_MAHKTECH"
+            });
+            </script>
+        </div>
+        </div></body></html>
